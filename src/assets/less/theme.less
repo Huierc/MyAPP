@@ -1,0 +1,67 @@
+.defalut {
+    .topcomponent {
+        background:#19233c;
+        box-shadow:0 2px 4px 0 rgba(35,36,37,0.30);
+        p{
+            color: #fff !important;
+        }
+        .username {
+            color: #fff;
+        }
+    }
+
+    .leftcomponent {
+        background:#121a2c;
+        box-shadow:0 2px 4px 0 rgba(35,36,37,0.30);
+    }
+}
+
+.theme-blue {
+    @theme-header-bg-color:#003C7E;
+    @theme-header-box-shadow-color:rgba(35,36,37,0.30);
+    @theme-font-color:#fff;
+    @theme-font-active-color:#fff;
+    @theme-menu-bg-color:#024A97;
+    @theme-menu-sub-bg-color:#003C7E;
+    @theme-menu-font-color:rgba(255, 255, 255, 0.65);
+    @theme-menu-active-bg-color:#309cff;
+    @theme-menu-active-font-color:#fff;
+    .topcomponent {
+        background:@theme-header-bg-color;
+        box-shadow:0 2px 4px 0 @theme-header-box-shadow-color;
+        p{
+            color: @theme-font-color;
+        }
+        .username {
+            color: @theme-font-color;
+        }
+    }
+
+    .leftcomponent {
+        background:@theme-menu-bg-color;
+        box-shadow:0 2px 4px 0 rgba(35,36,37,0.30);
+        .ant-menu, .ant-menu-dark .ant-menu-sub{
+            background-color: @theme-menu-bg-color;
+            color: @theme-menu-font-color;
+        }
+        .ant-menu-dark .ant-menu-inline.ant-menu-sub{
+            background-color: @theme-menu-sub-bg-color;
+        }
+        .ant-menu ant-menu-item:hover,.ant-menu ant-menu-item-active{
+            color: @theme-font-color;
+        }
+        .ant-menu.ant-menu-dark .ant-menu-item-selected{
+            background-color: @theme-menu-active-bg-color;
+            color: @theme-menu-active-font-color;
+        }
+        .ant-menu.ant-menu-dark .ant-menu-item-selected:hover {
+            color: @theme-menu-active-font-color;
+        }
+        .ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-item-group-title, .ant-menu-dark .ant-menu-item > a{
+            color: @theme-font-color;
+        }
+        .ant-menu-dark .ant-menu-item:hover, .ant-menu-dark .ant-menu-item-active, .ant-menu-dark .ant-menu-submenu-active, .ant-menu-dark .ant-menu-submenu-open, .ant-menu-dark .ant-menu-submenu-selected, .ant-menu-dark .ant-menu-submenu-title:hover{
+            color: @theme-font-color;
+        }
+    }
+}
