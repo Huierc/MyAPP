@@ -27,10 +27,10 @@ const bgimg = {
 
 const content = {
 	position: "absolute",
-	top: "50%",
+	top: "55%",
 	left: "50%",
 	width: "348px",
-	height: "418px",
+	height: "293px",
 	background: "white",
 	borderRadius: "5px",
 	padding: "35px",
@@ -75,7 +75,7 @@ class LoginPage extends React.Component {
 				<img src={BgImg} alt="" style={bgimg} />
 				<div style={content}>
 					<div style={{ textAlign: 'center', paddingBottom: 20 }}>
-						<img src={Logo} alt="" style={{ marginTop: 10 }} />
+						{/* <img src={Logo} alt="" style={{ marginTop: 10 }} /> */}
 						{/* <h4 style={{fontSize: "18px", margin: "20px auto"}}>大数据应用平台</h4> */}
 					</div>
 					<Form onSubmit={this.handleSubmit} className="login-form">
@@ -106,8 +106,7 @@ class LoginPage extends React.Component {
 						</FormItem>
 						<FormItem>
 							<Button type="primary" block htmlType="submit" size="large" style={{ marginTop: 20 }}>
-								登录
-                            </Button>
+								登录</Button>
 						</FormItem>
 					</Form>
 				</div>
@@ -305,12 +304,6 @@ const mapDispatchToProps = (dispatch) => {
 			} else {
 				message.error(res.obj)
 			}
-
-			// postAction(
-			// 	curUrl
-			// ).then (function (res) {
-
-			// })
 		}
 	}
 }
