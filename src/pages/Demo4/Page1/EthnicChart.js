@@ -15,7 +15,7 @@ import { G2,
 import { DataSet } from '@antv/data-set';
 
 // 折线图
-class LineChart extends Component {
+class EthnicChart extends Component {
 
   render() {
 
@@ -44,25 +44,20 @@ class LineChart extends Component {
       value: 'value'
     });
     let scales = this.props.scales || { value: { min: 0 } };
+    
     return (
       <Chart height={height} data={dv} scale={scales} padding={[30, 20, 60, 50]} forceFit>
-        {this.props.noLegend ? null : <Legend marker={'circle'} />}
-        <Axis name={nameKey} />
-        <Axis name="value" />
-        <Tooltip crosshairs={{ type: "y" }} />
-        <Geom
-          type="line"
+      <Coord transpose />
+      <Axis name={nameKey} />
+      <Axis name="population" />
+      <Tooltip crosshairs={{ type: "y" }} />
+      <Geom
+          type="interval"
           position={nameKey + "*value"}
           color={['type', this.props.colors]} tooltip={this.props.geomTooltip} />
-        <Geom
-          type={'point'}
-          position={nameKey + "*value"}
-          shape={'circle'}
-          color={['type', this.props.colors]} />
-        {this.props.children}
-      </Chart>
+    </Chart>
     )
   }
 }
 
-export default LineChart;
+export default EthnicChart;

@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
-import { Card } from 'antd';
-
-class Page2 extends Component {
+import { Breadcrumb, Card } from 'antd';
+import BizChart from './BizChart'
+class Analysis extends Component {
     render() {
-
         return (
-            <Card>
-                page2
-            </Card>
-
+            <div>
+                <Breadcrumb className="breadcrumb" >
+                    <Breadcrumb.Item>Demo</Breadcrumb.Item>
+                    <Breadcrumb.Item>示例</Breadcrumb.Item>
+                </Breadcrumb>
+                <div className="common-content">
+                    <Card>
+                    <BizChart />
+                    </Card>
+                </div>
+            </div>
         )
     }
 }
 
-export default Page2;
+export default Analysis;

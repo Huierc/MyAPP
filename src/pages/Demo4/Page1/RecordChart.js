@@ -14,12 +14,12 @@ import { G2,
   Util } from "bizcharts"
 import { DataSet } from '@antv/data-set';
 
-// 折线图
-class LineChart extends Component {
+// 学习图
+class RecordChart extends Component {
 
   render() {
 
-    const height = 350; // 高度设置，默认值
+    const height = 175; // 高度设置，默认值
     const data = this.props.data; // 数据
     const ds = new DataSet(); // dateset数据集方法
     const dv = ds.createView().source(data); // 数据转换
@@ -44,25 +44,27 @@ class LineChart extends Component {
       value: 'value'
     });
     let scales = this.props.scales || { value: { min: 0 } };
+    
     return (
-      <Chart height={height} data={dv} scale={scales} padding={[30, 20, 60, 50]} forceFit>
+        <Chart height={height} data={dv} scale={scales} padding={[30, 20, 60, 50]} forceFit>
         {this.props.noLegend ? null : <Legend marker={'circle'} />}
         <Axis name={nameKey} />
-        <Axis name="value" />
         <Tooltip crosshairs={{ type: "y" }} />
         <Geom
-          type="line"
-          position={nameKey + "*value"}
-          color={['type', this.props.colors]} tooltip={this.props.geomTooltip} />
-        <Geom
-          type={'point'}
-          position={nameKey + "*value"}
-          shape={'circle'}
-          color={['type', this.props.colors]} />
+            type="interval"
+            position={nameKey + "*value"}
+            color={['type', this.props.colors]} tooltip={this.props.geomTooltip}
+            adjust={[
+              {
+                type: "dodge",
+                marginRatio: 1 / 32
+              }
+            ]}
+          />
         {this.props.children}
       </Chart>
     )
   }
 }
 
-export default LineChart;
+export default RecordChart;
