@@ -182,27 +182,32 @@ class BizChart extends Component {
 
         return (
             <React.Fragment>
-                <Card title={'少数名族情况TOP10'}>
+                <Card>
                     <Row>
                         <Col span={12}>
+                            <h3>少数名族情况TOP10</h3>
                             <Shaoshumingzuqingkuang
                                 data={data}
                             />
                         </Col>
                         <Col span={12}>
+                            <h3>学习成绩</h3>
                             <Xuexichengji data1={data1}/>
+                            <h3>毕业情况</h3>
                             <Biyeqingkuang data2={data2}/>
                         </Col>
                     </Row>
                 </Card>
-                <Card title={'本学期消费情况'}>
+                <Card>
                     <Row>
                         <Col span={12}>
+                            <h3>本学期情况</h3>
                             <Benxueqiqingkuang
                                 data3={data3}
                             />
                         </Col>
                         <Col span={12}>
+                            <h3>预警情况</h3>
                             <Table dataSource={dataSource} height={400} columns={columns} />;
                         </Col>
                     </Row>
